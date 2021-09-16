@@ -13,9 +13,7 @@ library(classdata)
 data(choco)
 str(choco)
 hist(choco$CocoaPercent)
-sort(choco$CocoaPercent)
 tail(choco)
-sort(choco$CocoaPercent, decreasing = TRUE)
 # The histogram is not normally distributed, as it is slightly skewed left. It looks as though there may be outliers; however, we determined there are no outliers in this data, as there are values all of the way to 100, without any large breaks of having no values.
 boxplot(choco$CocoaPercent)
 #There are several outliers in the boxplot as many of the values fall outside of the interquartile range. In addition, the median of this data is around 70.
@@ -40,9 +38,6 @@ cor(choco$CocoaPercent, choco$Rating)
 
 #Question 4
 ```{r}
-table(choco$CountryBeanOrigin)
-table(choco$SpecificBeanOrigin)
-
 meanVenezuela <- mean(choco$Rating[choco$CountryBeanOrigin=='Venezuela'],na.rm=TRUE)
 meanVenezuela
 meanPeru<- mean(choco$Rating[choco$CountryBeanOrigin=='Peru'],na.rm=TRUE)
@@ -61,7 +56,6 @@ BrazilAVG
 
 #Question 5
 ```{r}
-unique(choco$Company)
 medianZotter <- median(choco$Rating[choco$Company=='Zotter'],na.rm=TRUE)
 medianZotter
 medianZokoko <- median(choco$Rating[choco$Company=='Zokoko'],na.rm=TRUE)
@@ -83,6 +77,3 @@ boxplot(dat$CocoaPercent ~ dat$Company)
 #For this analysis, I wanted to detemine which of the three companies Zotter, Zokoko, or Wm used the most cocoa percentage in their chocolate based on  median. WHen doing so, I created a boxplot to help me visualize this, along with calculate our numercal data. From the boxplot, I could identify that Wm used the highest cocoa percentage, following by Zotter and Zokoko. The medians calculated from my numerical analysis for Wm, Zotter, and Zokoko were 74, 70, and 68, respectively.
 ```
 
-#Push to Git
-```{r}
-git status
